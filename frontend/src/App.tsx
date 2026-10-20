@@ -28,7 +28,7 @@ export default function App() {
         <About />
         <Roadmap />
       </main>
-      <Toaster position="bottom-right" />
+      <Toaster position="bottom-center" />
     </div>
   );
 }

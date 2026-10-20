@@ -1,4 +1,3 @@
-import { Camera } from "lucide-react";
 import { Section, Reveal, Tag } from "./common";
 
 const ORGS = ["Treasury Board of Canada Secretariat", "Shared Services Canada", "Bank of Canada"];
@@ -18,12 +17,10 @@ export default function About() {
       <div className="grid gap-12 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
           <div className="flex items-center gap-3"><span className="font-mono text-xs text-sagedeep">08</span><span className="h-px w-10 bg-sagedeep/40" /><span className="eyebrow">The strategist</span></div>
-          <div data-testid="about-photo-placeholder" className="relative mt-8 flex aspect-[4/5] w-full max-w-sm flex-col items-center justify-center overflow-hidden rounded-t-[180px] rounded-b-2xl border border-dashed border-sagedeep/40 bg-gradient-to-b from-butter/80 to-blush/70">
-            <Camera size={22} className="text-sagedeep" />
-            <span className="mt-3 font-serif text-2xl italic text-espresso">Portrait coming soon</span>
-            <span className="mt-1 font-mono text-[10px] uppercase tracking-[0.14em] text-sagedeep">Photo placeholder</span>
-            <span className="absolute bottom-6 font-serif text-7xl text-espresso/10">HK</span>
+          <div data-testid="about-photo" className="relative mt-8 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-t-[180px] rounded-b-2xl bg-butter">
+            <img src="/img/hamda-portrait.jpg" alt="Portrait of Hamda Khalif" className="h-full w-full object-cover object-[60%_center]" />
           </div>
+          <p className="mt-4 font-serif text-lg italic text-cocoa">Hamda Khalif</p>
         </Reveal>
         <div className="lg:col-span-7">
           <Reveal>

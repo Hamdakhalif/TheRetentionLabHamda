@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { Tag } from "./common";
 
-const HERO_IMG = "https://images.pexels.com/photos/39627346/pexels-photo-39627346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=760";
+const HERO_IMG = "/img/hero-illustration.jpg";
 
 const LENSES = [
   { consumer: "Finds a product on her For You page at 11:40pm", analyst: "Acquisition channel, first-touch attribution, creator cohort" },
@@ -57,7 +57,7 @@ export default function Hero() {
 
         <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.2, ease }} className="relative lg:col-span-5">
           <div className="relative ml-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-t-[200px] rounded-b-2xl">
-            <img src={HERO_IMG} alt="Botanical still life suggesting a daily wellness ritual" className="h-full w-full object-cover" />
+            <img src={HERO_IMG} alt="Illustration of a woman doing her beauty routine at home" className="h-full w-full object-cover object-[center_30%]" />
             <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 via-transparent to-transparent" />
           </div>
           <motion.div

@@ -1,0 +1,34 @@
+{
+  "summary": "Frontend-only E2E test (Playwright, desktop 1920 + mobile 390) of The Retention Lab. ~95% of the requested flows work: nav and mobile nav, hero CTAs, Competitive, Cohort lab (all 5 shadcn filters, channel pills, KPIs, reset, persistence, row detail open/close, 4 tabs, CSV download, data story), Rescue studio (both journeys, tally plus persistence, 6 hypotheses), Lifecycle (9 journeys, 3 personas, Priya SMS suppressed, A/B simulate/save/delete/persist), Experiments (ICE re-rank, sample size/duration, reset), CLV (sliders, warning, load synthetic, reset), HCI (both modes, annotations, delay/undo, swap, cancel->confirm->reactivate), Roadmap (phases plus persisted checks), Methodology accordion, LinkedIn CTA. No horizontal overflow at 390px. No page errors. Found 1 functional UX bug (A/B recipients input) and 3 small issues.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "LifecycleStudio A/B builder - Recipients per arm", "issue": "Users cannot type a number in this field. onChange clamps on every keystroke (Math.max(200, Number(v)||200)). After the field is cleared it snaps back to 200, so typing '3000' gives '2003000', which then clamps to 100000. Reproduced by typing with the keyboard.", "selector": "[data-testid='ab-sample-size-input']", "priority": "MEDIUM"},
+      {"component": "LifecycleStudio A/B builder - Hypothesis textarea", "issue": "value={hyp || defaultHyp}: the textarea cannot be emptied. Deleting all the text puts the default hypothesis back right away (211 chars after fill('')).", "selector": "[data-testid='ab-hypothesis-input']", "priority": "LOW"},
+      {"component": "CLV Simulator ROI card", "issue": "When improvement = 0% the card shows '$-0.00' (float -0 / sign placed after the $). Format as '−$0.00' or clamp tiny negative values to 0.", "selector": "[data-testid='clv-roi']", "priority": "LOW"},
+      {"component": "Experiments Reset", "issue": "exp-reset-ice resets only the ICE scores. Baseline/MDE sample-size sliders keep their changed values (sample size stayed 4,007 after Reset). Either rename the button or also reset the sample-size sliders.", "selector": "[data-testid='exp-reset-ice']", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Cohort lab / HCI (desktop)", "issues": ["Sonner toasts (bottom-right) sit on top of the sticky cohort detail panel and HCI annotation rows for a moment. Cosmetic only."]},
+      {"screen": "Console", "issues": ["Recharts warns 'width(-1) and height(-1)' for charts inside inactive tabs. Harmless, but you could add minWidth/minHeight to ResponsiveContainer or render charts only when their tab is active."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix ab-sample-size-input: keep the raw string in state and clamp to 200..100000 on blur or before running the simulation, not on every keystroke",
+    "Let the hypothesis textarea be emptied (use hyp ?? defaultHyp with null as the initial value, or seed state with the default)",
+    "Fix the '$-0.00' ROI formatting",
+    "Optional: make Experiments Reset also reset the sample-size sliders, or rename it 'Reset ICE'"
+  ],
+  "critical_code_review_comments": [
+    "usePersist reads JSON from localStorage with no schema check. If the Filters/Inputs shape changes later, old stored objects could crash the app (e.g. filters.channels undefined). Consider merging with defaults: {...initial, ...parsed}.",
+    "Rescue tally counts the Original-journey 'Keep my subscription' result as 'retained'. That may be intended, but it mixes original and proposed outcomes in one tally."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "95%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Frontend-only app, all state in localStorage under the 'retention-lab:' prefix (clear it before each run). Shadcn select options use the testid pattern {selectTestId}-option-{value-lowercased-dashed}. Radix sliders: focus '[data-testid=X] [role=slider]' and press ArrowRight/End/Home. Smooth scroll needs ~1.5-3s on long jumps. Everything in the review request was verified except copy-to-clipboard (data-story-copy-btn), which was not tested."
+}

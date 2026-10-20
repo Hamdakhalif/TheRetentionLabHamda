@@ -94,7 +94,7 @@ export default function ClvSimulator() {
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div data-testid="clv-incremental" className="rounded-2xl bg-espresso p-5 text-ivory"><div className="font-mono text-[10px] uppercase tracking-[0.14em] text-honey">Incremental 24-mo contribution</div><div className={`mt-2 font-serif text-4xl ${delta < 0 ? "text-blushdeep" : ""}`}>{delta >= 0 ? "+" : "−"}{usd(Math.abs(delta))}</div></div>
             <div className="rounded-2xl bg-butter/70 p-5"><div className="eyebrow !text-[10px]">Incentive spend (24 mo)</div><div className="mt-2 font-serif text-4xl">{usd(r.incentiveSpend)}</div></div>
-            <div data-testid="clv-roi" className="rounded-2xl bg-blush/70 p-5"><div className="eyebrow !text-[10px]">Return per $1 of incentive</div><div className="mt-2 font-serif text-4xl">{roi == null ? "—" : `$${roi.toFixed(2)}`}</div></div>
+            <div data-testid="clv-roi" className="rounded-2xl bg-blush/70 p-5"><div className="eyebrow !text-[10px]">Return per $1 of incentive</div><div className="mt-2 font-serif text-4xl">{roi == null ? "—" : `${roi < -0.005 ? "−" : ""}$${Math.abs(roi).toFixed(2)}`}</div></div>
           </div>
           {delta < 0 && <p data-testid="clv-warning" className="mt-3 text-sm text-terracotta">At these assumptions the incentive costs more than the retention it buys — the scenario destroys value.</p>}
 

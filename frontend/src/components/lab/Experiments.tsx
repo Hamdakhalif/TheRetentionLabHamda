@@ -103,7 +103,7 @@ export default function Experiments() {
           <div className="lg:sticky lg:top-24">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-serif text-2xl text-espresso">Prioritization · I × C ÷ E</h3>
-              <button data-testid="exp-reset-ice" onClick={() => setIce(DEFAULT_ICE)} className="btn-sm"><RotateCcw size={12} />Reset</button>
+              <button data-testid="exp-reset-ice" onClick={() => { setIce(DEFAULT_ICE); setSs(DEFAULT_SS); }} className="btn-sm"><RotateCcw size={12} />Reset</button>
             </div>
             <div className="panel mb-6 p-5">
               <div className="mb-1 text-sm text-cocoa">Scoring <strong className="text-espresso">Experiment {e.id}</strong></div>

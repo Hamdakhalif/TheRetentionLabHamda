@@ -195,10 +195,11 @@ export default function LifecycleStudio() {
   const [b, setB] = useState("ritual");
   const [metric, setMetric] = useState(METRICS[0]);
   const [guards, setGuards] = useState<string[]>(["Unsubscribe rate"]);
-  const [n, setN] = useState(4000);
+  const [nRaw, setNRaw] = useState("4000");
+  const n = Math.max(200, Math.min(100000, Math.round(Number(nRaw)) || 200));
   const sa = STRATEGIES.find((s) => s.key === a)!;
   const sb = STRATEGIES.find((s) => s.key === b)!;
-  const [hyp, setHyp] = useState("");
+  const [hyp, setHyp] = useState<string | null>(null);
   const defaultHyp = `If we lead the "${j.name}" message with a ${sb.label.toLowerCase()} angle instead of ${sa.label.toLowerCase()}, ${metric.toLowerCase()} will increase because it better matches what ${p.archetype.toLowerCase()} customers value.`;
   const [result, setResult] = useState<ReturnType<typeof simulate> | null>(null);
   const [plans, setPlans] = usePersist<TestPlan[]>("lc-ab-plans", []);
@@ -209,7 +210,7 @@ export default function LifecycleStudio() {
   };
   const save = () => {
     if (a === b) return toast.error("Pick two different strategies to compare.");
-    setPlans([{ id: String(Date.now()), journey: j.name, a: sa.label, b: sb.label, hypothesis: hyp || defaultHyp, metric, guardrails: guards, n }, ...plans].slice(0, 8));
+    setPlans([{ id: String(Date.now()), journey: j.name, a: sa.label, b: sb.label, hypothesis: hyp ?? defaultHyp, metric, guardrails: guards, n }, ...plans].slice(0, 8));
     toast.success("Test plan saved to this browser");
   };
 
@@ -301,11 +302,11 @@ export default function LifecycleStudio() {
               </div>
               <div>
                 <div className="mb-1.5 text-[11px] uppercase tracking-[0.1em] text-ivory/60">Hypothesis</div>
-                <textarea data-testid="ab-hypothesis-input" value={hyp || defaultHyp} onChange={(e) => setHyp(e.target.value)} rows={4} className="w-full rounded-xl border border-ivory/15 bg-ivory/5 p-3 text-sm text-ivory focus:border-honey focus:outline-none" />
+                <textarea data-testid="ab-hypothesis-input" value={hyp ?? defaultHyp} onChange={(e) => setHyp(e.target.value)} rows={4} className="w-full rounded-xl border border-ivory/15 bg-ivory/5 p-3 text-sm text-ivory focus:border-honey focus:outline-none" />
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="text-espresso"><div className="mb-1.5 text-[11px] uppercase tracking-[0.1em] text-ivory/60">Primary metric</div><Choice testId="ab-primary-metric" label="Primary metric" value={metric} onChange={(v) => { setMetric(v); setResult(null); }} options={METRICS.map((m) => ({ value: m, label: m }))} /></div>
-                <div><div className="mb-1.5 text-[11px] uppercase tracking-[0.1em] text-ivory/60">Recipients per arm</div><input data-testid="ab-sample-size-input" type="number" min={200} max={100000} step={100} value={n} onChange={(e) => { setN(Math.max(200, Math.min(100000, Number(e.target.value) || 200))); setResult(null); }} className="h-10 w-full rounded-xl border border-ivory/15 bg-ivory/5 px-3 text-sm text-ivory focus:border-honey focus:outline-none" /></div>
+                <div><div className="mb-1.5 text-[11px] uppercase tracking-[0.1em] text-ivory/60">Recipients per arm</div><input data-testid="ab-sample-size-input" type="number" min={200} max={100000} step={100} value={nRaw} onChange={(e) => { setNRaw(e.target.value); setResult(null); }} onBlur={() => setNRaw(String(n))} className="h-10 w-full rounded-xl border border-ivory/15 bg-ivory/5 px-3 text-sm text-ivory focus:border-honey focus:outline-none" /></div>
               </div>
               <div>
                 <div className="mb-2 text-[11px] uppercase tracking-[0.1em] text-ivory/60">Guardrail metrics</div>

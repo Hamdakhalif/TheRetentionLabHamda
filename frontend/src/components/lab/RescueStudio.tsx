@@ -113,6 +113,7 @@ export default function RescueStudio() {
   const finish = (o: Option | "cancelled" | "kept") => {
     setOutcome(o);
     setStep(9);
+    if (mode !== "improved") return;
     if (o === "cancelled") setTally({ ...tally, cancelled: tally.cancelled + 1 });
     else setTally({ ...tally, saved: tally.saved + 1 });
   };
@@ -254,7 +255,7 @@ export default function RescueStudio() {
             <Pill testId="rescue-mode-improved" active={mode === "improved"} onClick={() => { setMode("improved"); reset(); }}>Proposed</Pill>
           </div>
           <div data-testid="rescue-session-tally" className="mt-8 flex items-center justify-between rounded-xl border border-dashed border-line p-4 text-xs text-cocoa">
-            <span>Your test runs: <strong className="text-espresso">{tally.saved}</strong> retained · <strong className="text-espresso">{tally.cancelled}</strong> cancelled</span>
+            <span>Proposed-journey runs: <strong className="text-espresso">{tally.saved}</strong> retained · <strong className="text-espresso">{tally.cancelled}</strong> cancelled</span>
             <button data-testid="rescue-reset-tally" onClick={() => { setTally({ saved: 0, cancelled: 0 }); toast("Tally cleared"); }} className="text-sagedeep underline">clear</button>
           </div>
         </Reveal>

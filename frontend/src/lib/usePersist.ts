@@ -5,7 +5,11 @@ export function usePersist<T>(key: string, initial: T): [T, (v: T | ((p: T) => T
   const [value, setValue] = useState<T>(() => {
     try {
       const raw = window.localStorage.getItem(storageKey);
-      return raw ? (JSON.parse(raw) as T) : initial;
+      if (!raw) return initial;
+      const parsed = JSON.parse(raw);
+      const isObj = (v: unknown) => v && typeof v === "object" && !Array.isArray(v);
+      if (isObj(initial)) return isObj(parsed) ? ({ ...initial, ...parsed } as T) : initial;
+      return typeof parsed === typeof initial ? (parsed as T) : initial;
     } catch {
       return initial;
     }
