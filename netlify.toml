@@ -1,0 +1,13 @@
+[build]
+  base = "frontend"
+  command = "yarn install --network-timeout 600000 && yarn build"
+  publish = "build"
+
+[build.environment]
+  CI = "false"
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
