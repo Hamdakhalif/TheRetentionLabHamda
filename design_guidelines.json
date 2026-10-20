@@ -1,0 +1,153 @@
+{
+  "project_name": "The Retention Lab — An Arrae Growth Concept by Hamda Khalif",
+  "app_type": "hybrid interactive editorial + analytics single-page app",
+  "independent_concept": true,
+  "archetype": "ORGANIC & EARTHY + EDITORIAL WELLNESS ANALYTICS",
+  "theme": {
+    "mode": "light",
+    "tone": "Warm, tactile, elevated wellness publication meets high-precision growth engine"
+  },
+  "colors": {
+    "background_primary": "#FDFBF7",
+    "background_secondary": "#FAF6F0",
+    "background_tertiary": "#F4EFE6",
+    "card_background": "#FFFFFF",
+    "butter_yellow": "#FAF2D6",
+    "butter_yellow_accent": "#F3E6B4",
+    "pale_blush": "#F7E5DE",
+    "pale_blush_accent": "#EECECE",
+    "muted_sage": "#E3E8E0",
+    "sage_dark": "#6A7B68",
+    "sage_accent": "#8B9B88",
+    "deep_espresso": "#1C1817",
+    "espresso_muted": "#4A4441",
+    "border_subtle": "#EBE5DC",
+    "border_medium": "#D9D0C3",
+    "chart_palette": [
+      "#6A7B68",
+      "#C88B73",
+      "#D4A359",
+      "#7B82A8",
+      "#9E6B82",
+      "#4A6B6C"
+    ]
+  },
+  "typography": {
+    "headline_font": "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+    "body_font": "'Plus Jakarta Sans', 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+    "mono_font": "'JetBrains Mono', 'Fira Code', monospace",
+    "hierarchy": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-[#1C1817] leading-[1.1]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-serif text-[#1C1817] tracking-tight leading-snug",
+      "subsection_h3": "text-xl sm:text-2xl font-serif text-[#1C1817]",
+      "card_h4": "text-lg font-semibold text-[#1C1817]",
+      "body": "text-base text-[#4A4441] leading-relaxed",
+      "caption": "text-xs font-mono uppercase tracking-[0.15em] text-[#6A7B68]"
+    }
+  },
+  "layout_and_spacing": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 sm:py-24",
+    "grid_gap": "gap-6 lg:gap-8",
+    "border_radius": "rounded-2xl for cards, rounded-xl for inputs/buttons, rounded-full for pills",
+    "sticky_navigation": "Top fixed nav with backdrop blur (bg-[#FDFBF7]/85 backdrop-blur-md) with quick scroll links to all 10 sections + progress bar indicator"
+  },
+  "image_urls": {
+    "hero_botanical": "https://images.pexels.com/photos/39627346/pexels-photo-39627346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "product_packaging": "https://images.pexels.com/photos/4841525/pexels-photo-4841525.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "herbal_supplements": "https://images.pexels.com/photos/7615458/pexels-photo-7615458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "natural_ingredients": "https://images.pexels.com/photos/7615457/pexels-photo-7615457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "title": "Opening Editorial Hero",
+      "headline": "I am the customer you're trying to retain.",
+      "subhead": "And I understand the technology, data, and experiences that make her come back.",
+      "ctas": [
+        { "text": "Explore the Retention Strategy", "target": "#competitive-intelligence" },
+        { "text": "Meet the Strategist", "target": "#about-hamda" }
+      ],
+      "data_test_id": "hero-section"
+    },
+    {
+      "id": "competitive-intelligence",
+      "title": "Competitive Intelligence",
+      "subtitle": "From Viral Product to Daily Ritual",
+      "features": "Interactive brand selector (Arrae vs Lemme vs Cymbiotika), side-by-side customer journey comparison, verified vs hypothesis tags, strategic insights card",
+      "data_test_id": "competitive-intelligence-section"
+    },
+    {
+      "id": "cohort-intelligence",
+      "title": "Cohort Intelligence Lab",
+      "subtitle": "Interactive Analysis of 2,000+ Synthetic Customer Profiles",
+      "filters": ["Acquisition Month", "Product Line", "Subscription vs One-time", "Channel", "BFCM/Seasonal Cohort", "Tenure Group"],
+      "visuals": ["Cohort Retention Heatmap (Monthly Matrix)", "Repeat Purchase Rate Chart", "Churn Curve", "CLV Trajectory", "Time Between Purchases Histogram", "Cohort Revenue Stacked Area Chart"],
+      "interactive": "Clickable cohort rows opening detailed drawer with 'What the Data Is Telling Us' strategic breakdown",
+      "data_test_id": "cohort-intelligence-section"
+    },
+    {
+      "id": "subscription-rescue",
+      "title": "Subscription Rescue Studio",
+      "features": "Cancellation reason picker, Original (friction-heavy) vs Improved (Value-first rescue) flow interactive simulator with phone mockup, key hypothesis, expected churn reduction % and saved revenue metric",
+      "data_test_id": "subscription-rescue-section"
+    },
+    {
+      "id": "lifecycle-studio",
+      "title": "Email & SMS Lifecycle Studio",
+      "features": "9 key retention journeys, filterable by Trigger / Segment / Channel / Timing / Messaging. Realistic desktop email preview + mobile SMS preview. Persona switcher (Sensory-first, Routine Builder, Value Seeker). Interactive A/B test builder with copy/timing toggle",
+      "data_test_id": "lifecycle-studio-section"
+    },
+    {
+      "id": "experimentation-engine",
+      "title": "Experimentation Engine",
+      "features": "4 strategic experiments with ICE (Impact, Confidence, Ease) sliders. Dynamic priority matrix recalculation and impact timeline visualization",
+      "data_test_id": "experimentation-engine-section"
+    },
+    {
+      "id": "clv-simulator",
+      "title": "CLV Simulator",
+      "features": "Interactive financial model with input sliders (AOV, Purchase Frequency, Retention Rate, Margin %, Discount Rate). Baseline vs Scenario comparison with live ROI and mathematical formulas visible",
+      "data_test_id": "clv-simulator-section"
+    },
+    {
+      "id": "hci-lab",
+      "title": "HCI Lab — Portal UX Redesign",
+      "features": "Interactive toggle between Standard Recharge Portal vs Improved Arrae Custom Portal. Visual annotations highlighting micro-copy, delay options, swap mechanisms, and gift unlocks",
+      "data_test_id": "hci-lab-section"
+    },
+    {
+      "id": "about-hamda",
+      "title": "About Hamda",
+      "headline": "Part wellness consumer. Part technologist. Entirely curious about why people stay.",
+      "features": "Editorial profile with photo placeholder frame, core operating principles, background in retention engineering & product strategy",
+      "data_test_id": "about-hamda-section"
+    },
+    {
+      "id": "roadmap-and-methodology",
+      "title": "90-Day Retention Roadmap & Methodology",
+      "closing_line": "Acquisition starts the relationship. Experience determines whether it lasts.",
+      "cta_linkedin": "Let's Talk Retention",
+      "cta_url": "https://www.linkedin.com/in/hamda-khalif/",
+      "features": "Interactive 90-day execution Gantt/phase roadmap (Days 1-30, 31-60, 61-90) + Methodology section detailing data synthetic engine parameters and research framework",
+      "data_test_id": "roadmap-methodology-section"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette: Warm ivory (#FDFBF7) background, deep espresso (#1C1817) typography, with accents of soft butter yellow (#FAF2D6), pale blush (#F7E5DE), and muted sage (#E3E8E0 / #6A7B68).",
+    "Use Cormorant Garamond for all section titles and editorial hero headings. Use Plus Jakarta Sans for UI elements, labels, and dashboard controls.",
+    "Ensure all 10 required sections are built completely as interactive client-side React components in src/App.js or dedicated sub-components.",
+    "Include data-testid on all key interactive elements (buttons, filter selects, tabs, sliders, charts, links) using kebab-case role-based names.",
+    "Ensure smooth scrolling between sticky navigation links and page sections using scroll-margin-top / scroll-smooth.",
+    "Use Recharts or SVG charts styled in muted sage and terracotta tones for the Cohort Intelligence Lab and CLV Simulator.",
+    "Add explicit Independent Concept label in the top navigation bar or header to indicate candidacy proposal."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do NOT use dark gradients or pure black (#000000). Use deep espresso (#1C1817) for dark text.",
+    "Avoid generic centered layouts or corporate Vercel/Stripe card aesthetic.",
+    "All buttons must have hover, active, and focus states with subtle scale or background hue transitions.",
+    "Ensure containers with borders have explicit internal padding (p-6 or p-8) to avoid collision.",
+    "DO NOT use raw HTML select or standard input where custom styled select or sliders enhance editorial feel.",
+    "Include toast feedback via Sonner for actions like saving A/B tests, applying filters, or copying strategic takeaways."
+  ]
+}

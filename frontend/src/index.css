@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 40 50% 98%;
+        --foreground: 10 10% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 10 10% 10%;
+        --popover: 40 50% 99%;
+        --popover-foreground: 10 10% 10%;
+        --primary: 10 10% 10%;
+        --primary-foreground: 40 50% 98%;
+        --secondary: 38 40% 93%;
+        --secondary-foreground: 10 10% 10%;
+        --muted: 38 35% 94%;
+        --muted-foreground: 15 6% 36%;
+        --accent: 46 78% 91%;
+        --accent-foreground: 10 10% 10%;
+        --destructive: 10 50% 50%;
+        --destructive-foreground: 40 50% 98%;
+        --border: 36 27% 89%;
+        --input: 36 24% 85%;
+        --ring: 110 8% 45%;
+        --chart-1: 110 8% 45%;
+        --chart-2: 16 44% 62%;
+        --chart-3: 38 59% 59%;
+        --chart-4: 232 20% 57%;
+        --chart-5: 330 19% 52%;
+        --radius: 0.85rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-ivory text-espresso font-sans antialiased;
+        margin: 0;
+    }
+    ::selection {
+        background: #F3E6B4;
+        color: #1C1817;
+    }
+}
+
+@layer components {
+    .eyebrow {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-sagedeep;
+    }
+    .panel {
+        @apply rounded-2xl border border-line bg-white/70 backdrop-blur-sm;
+    }
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-medium text-ivory transition-[background-color,transform,box-shadow] duration-300 hover:bg-[#2E2725] hover:shadow-[0_12px_30px_-12px_rgba(28,24,23,0.6)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sagedeep focus-visible:ring-offset-2 focus-visible:ring-offset-ivory;
+    }
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-espresso/20 px-7 py-3.5 text-sm font-medium text-espresso transition-[background-color,border-color,transform] duration-300 hover:border-espresso hover:bg-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sagedeep;
+    }
+    .btn-sm {
+        @apply inline-flex items-center justify-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-xs font-medium text-espresso transition-[background-color,border-color,transform] duration-200 hover:border-espresso/40 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sagedeep disabled:opacity-40;
+    }
+    .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.35;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0 0.09 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .text-input {
+        @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-espresso placeholder:text-cocoa/40 transition-[border-color,box-shadow] focus:border-sagedeep focus:outline-none focus:ring-2 focus:ring-sagedeep/20;
+    }
+}
+
+.recharts-cartesian-axis-tick text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    fill: #4A4441;
+}
+.recharts-legend-item-text {
+    font-size: 11px;
+    color: #4A4441 !important;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee { animation: none; }
+    html { scroll-behavior: auto; }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
