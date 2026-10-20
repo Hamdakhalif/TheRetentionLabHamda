@@ -151,7 +151,7 @@ export default function CohortLab() {
       <SectionHeader
         index="02"
         eyebrow="Cohort intelligence lab"
-        title={<>Who stays, who drifts, <em className="text-sagedeep">and when.</em></>}
+        title={<>Who stays, who drifts, <em className="text-clay">and when.</em></>}
         intro={<>A working analytics surface over <strong className="font-medium text-espresso">{CUSTOMERS.length.toLocaleString()} synthetic customer records</strong> (Sep 2024 – Dec 2025 acquisitions, observed to May 31, 2026). Every number below is computed live from the dataset — change a filter and watch it recalculate.</>}
       />
 

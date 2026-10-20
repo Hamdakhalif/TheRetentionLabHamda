@@ -148,7 +148,7 @@ export default function HciLab() {
   const list = mode === "improved" ? IMPROVED : STANDARD;
   return (
     <Section id="hci" testId="hci-lab-section" className="bg-linen/60">
-      <SectionHeader index="07" eyebrow="Human-computer interaction lab" title={<>Retention is a <em className="text-sagedeep">usability</em> problem first.</>} intro="A conceptual subscription portal, before and after. Tap any numbered marker — on the phone or in the list — to see the HCI principle behind it and the retention hypothesis it creates. The improved portal is fully interactive." />
+      <SectionHeader index="07" eyebrow="Human-computer interaction lab" title={<>Retention is a <em className="text-clay">usability</em> problem first.</>} intro="A conceptual subscription portal, before and after. Tap any numbered marker — on the phone or in the list — to see the HCI principle behind it and the retention hypothesis it creates. The improved portal is fully interactive." />
       <div className="mb-8 flex gap-2">
         <Pill testId="hci-mode-standard" active={mode === "standard"} onClick={() => { setMode("standard"); setActive(null); }}>Standard portal</Pill>
         <Pill testId="hci-mode-improved" active={mode === "improved"} onClick={() => { setMode("improved"); setActive(null); }}>Improved portal</Pill>

@@ -235,7 +235,7 @@ export default function RescueStudio() {
       <SectionHeader
         index="03"
         eyebrow="Subscription rescue studio"
-        title={<>A cancellation flow that <em className="text-sagedeep">listens</em> before it lets go.</>}
+        title={<>A cancellation flow that <em className="text-plum">listens</em> before it lets go.</>}
         intro="Pick a reason, then walk the same subscriber through the original and the proposed journey. Every intervention is tied to a hypothesis and a metric — and cancelling is never harder than in the original."
       />
       <div className="grid gap-10 lg:grid-cols-12">

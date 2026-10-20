@@ -108,7 +108,7 @@ export default function Roadmap() {
 
       <footer data-testid="site-footer" className="border-t border-ivory/10 bg-espresso px-5 pb-10 text-ivory/60 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 border-t border-ivory/10 pt-8 text-[11px] leading-relaxed sm:flex-row sm:justify-between">
-          <span>The Retention Lab — An Arrae Growth Concept by Hamda Khalif. An independent concept; not affiliated with, endorsed by, or built for Arrae.</span>
+          <span>The Retention Lab — An Arrae Growth Concept by Hamda Khalif. An independent concept.</span>
           <span>All customer data is synthetic. Scenarios are not forecasts.</span>
         </div>
       </footer>

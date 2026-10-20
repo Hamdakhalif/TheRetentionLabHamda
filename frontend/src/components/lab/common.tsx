@@ -24,8 +24,8 @@ export function SectionHeader({ index, eyebrow, title, intro }: { index: string;
         </div>
       </div>
       <div className="lg:col-span-9">
-        <h2 className="font-serif text-3xl leading-[1.05] tracking-tight text-espresso sm:text-4xl lg:text-5xl">{title}</h2>
-        {intro && <div className="mt-5 max-w-3xl text-base leading-relaxed text-cocoa">{intro}</div>}
+        <h2 className="font-serif text-3xl font-semibold leading-[1.05] tracking-tight text-espresso sm:text-4xl lg:text-5xl">{title}</h2>
+        {intro && <div className="mt-5 max-w-3xl text-base leading-relaxed text-cocoa [&_strong]:font-semibold [&_strong]:text-espresso">{intro}</div>}
       </div>
     </Reveal>
   );
@@ -76,7 +76,7 @@ export function Pill({ active, onClick, children, testId, className = "" }: { ac
 export const Stat = ({ label, value, sub, testId }: { label: string; value: React.ReactNode; sub?: React.ReactNode; testId: string }) => (
   <div data-testid={testId} className="min-w-0">
     <div className="eyebrow mb-2 !text-[10px]">{label}</div>
-    <div className="font-serif text-3xl leading-none text-espresso sm:text-4xl">{value}</div>
+    <div className="font-serif text-3xl font-semibold leading-none text-espresso sm:text-4xl">{value}</div>
     {sub && <div className="mt-1.5 text-xs text-cocoa/80">{sub}</div>}
   </div>
 );

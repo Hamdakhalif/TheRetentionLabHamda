@@ -54,7 +54,7 @@ export default function ClvSimulator() {
 
   return (
     <Section id="clv" testId="clv-simulator-section">
-      <SectionHeader index="06" eyebrow="Customer lifetime value simulator" title={<>What a point of churn is <em className="text-sagedeep">really worth.</em></>} intro="A transparent scenario model for subscribers. Change the assumptions and compare a baseline against a retention-improvement scenario that includes the cost of the incentive used to achieve it." />
+      <SectionHeader index="06" eyebrow="Customer lifetime value simulator" title={<>What a point of churn is <em className="text-plum">really worth.</em></>} intro="A transparent scenario model for subscribers. Change the assumptions and compare a baseline against a retention-improvement scenario that includes the cost of the incentive used to achieve it." />
 
       <div className="grid gap-10 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">

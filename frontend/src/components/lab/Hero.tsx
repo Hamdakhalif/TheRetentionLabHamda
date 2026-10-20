@@ -16,7 +16,7 @@ const ease = [0.22, 1, 0.36, 1];
 export default function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
-    <section data-testid="hero-section" className="grain relative overflow-hidden pt-28 sm:pt-32">
+    <section data-testid="hero-section" className="relative overflow-hidden pt-28 sm:pt-32">
       <div className="pointer-events-none absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-butter blur-3xl" />
       <div className="pointer-events-none absolute -left-32 bottom-0 h-[380px] w-[380px] rounded-full bg-blush/80 blur-3xl" />
       <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-20 sm:px-8 lg:grid-cols-12 lg:pb-28">
@@ -29,10 +29,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease }}
             data-testid="hero-headline"
-            className="font-serif text-5xl leading-[0.98] tracking-tight text-espresso sm:text-6xl lg:text-[5.4rem]"
+            className="font-serif text-5xl font-semibold leading-[0.98] tracking-tight text-espresso sm:text-6xl lg:text-[5.4rem]"
           >
             I am the customer <br className="hidden sm:block" />
-            you're trying <em className="text-sagedeep">to retain.</em>
+            you're trying <em className="text-clay">to retain.</em>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease }} className="mt-8 max-w-xl font-serif text-2xl italic leading-snug text-cocoa sm:text-[1.7rem]">
             And I understand the technology, data, and experiences that make her come back.
@@ -112,7 +112,7 @@ export default function Hero() {
         <div className="animate-marquee flex w-max gap-10 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.2em]">
           {Array.from({ length: 2 }).map((_, j) => (
             <div key={j} className="flex gap-10">
-              {["Independent concept", "Not affiliated with or endorsed by Arrae", "All customer data is synthetic", "No internal metrics implied", "Built in React + TypeScript", "Scenarios are not forecasts"].map((t) => (
+              {["Independent concept", "All customer data is synthetic", "No internal metrics implied", "Built in React + TypeScript", "Scenarios are not forecasts"].map((t) => (
                 <span key={t + j} className="flex items-center gap-10">{t}<span className="text-honey">✦</span></span>
               ))}
             </div>

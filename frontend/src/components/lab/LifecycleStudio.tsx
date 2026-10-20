@@ -216,7 +216,7 @@ export default function LifecycleStudio() {
 
   return (
     <Section id="lifecycle" testId="lifecycle-studio-section">
-      <SectionHeader index="04" eyebrow="Email & SMS lifecycle studio" title={<>Nine journeys. Three customers. <em className="text-sagedeep">One relationship.</em></>} intro="Choose a journey and a persona to see how triggers, timing, consent rules and messaging adapt. Previews are conceptual and use a neutral placeholder brand." />
+      <SectionHeader index="04" eyebrow="Email & SMS lifecycle studio" title={<>Nine journeys. Three customers. <em className="text-clay">One relationship.</em></>} intro="Choose a journey and a persona to see how triggers, timing, consent rules and messaging adapt. Previews are conceptual and use a neutral placeholder brand." />
 
       <div className="grid gap-10 lg:grid-cols-12">
         <Reveal className="lg:col-span-3">
