@@ -43,7 +43,7 @@ export default function Nav() {
     <header data-testid="site-nav" className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-ivory/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <button data-testid="nav-home-link" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-baseline gap-2 text-left">
-          <span className="font-serif text-xl italic text-espresso">The Retention Lab</span>
+          <span className="font-serif text-xl font-semibold italic text-espresso">TheRetentionLab<span className="font-normal">- by Hamda</span></span>
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.16em] text-sagedeep sm:inline">Independent concept</span>
         </button>
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Sections">
